@@ -6,16 +6,16 @@ let fakeDB = {
 module.exports = {
     Query: {
         users: () => fakeDB.users,
-        user: ({id}) => _.find(fakeDB.users, {id}),
+        user: (root, {id}) => _.find(fakeDB.users, {id}),
     },
     Mutation: {
-        addUser: ({user}) => {
+        addUser: (root, {user}) => {
             fakeDB.users.push(user);
             return {
                 success: true
             };
         },
-        updateUser: ({user}) => {
+        updateUser: (root, {user}) => {
             let oUser = _.find(fakeDB.users, {id: user.id});
             if (oUser) {
                 oUser.fName = user.fName;

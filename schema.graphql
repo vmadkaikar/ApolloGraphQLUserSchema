@@ -1,3 +1,8 @@
+type Query {
+    users: [User]
+    user(id: Int): User
+}
+
 type User {
     id: Int
     fName: String
@@ -15,3 +20,4 @@ input UserInput {
     lName: String
     dob: String
 }
+

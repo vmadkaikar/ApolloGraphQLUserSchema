@@ -1,9 +1,11 @@
-import 'graphql-import-node';
-import { GraphQLModule } from '@graphql-modules/core';
-import resolvers from './resolvers';
-import * as typeDefs from './schema.graphql';
+require ('graphql-import-node');
+const { GraphQLModule } = require( '@graphql-modules/core');
+const resolvers= require( './resolver');
+const typeDefs = require( './schema.graphql');
 
-export const UserModule = new GraphQLModule({
-    resolvers,
-    typeDefs
-});
+module.exports = {
+    UserModule: new GraphQLModule({
+        resolvers,
+        typeDefs
+    })
+};

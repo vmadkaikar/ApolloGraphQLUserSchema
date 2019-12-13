@@ -3,10 +3,7 @@ let fakeDB = {
     users: []
 };
 
-export default {
-    User: {
-        id: () => {}
-    },
+module.exports = {
     Query: {
         users: () => fakeDB.users,
         user: ({id}) => _.find(fakeDB.users, {id}),

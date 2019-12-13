@@ -1,0 +1,17 @@
+type User {
+    id: Int
+    fName: String
+    lName: String
+    dob: String
+}
+
+type ResponsePayload {
+    success: Boolean
+}
+
+input UserInput {
+    id: Int
+    fName: String
+    lName: String
+    dob: String
+}

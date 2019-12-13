@@ -1,5 +1,5 @@
 const _ = require('lodash');
-let fakeDB = {
+const fakeDB = {
     users: []
 };
 
@@ -18,17 +18,10 @@ module.exports = {
         updateUser: (root, {user}) => {
             let oUser = _.find(fakeDB.users, {id: user.id});
             if (oUser) {
-                oUser.fName = user.fName;
-                oUser.lName = user.lName;
-                oUser.dob = user.dob;
-                return {
-                    success: true
-                };
-            } else {
-                return {
-                    success: false
-                };
+                oUser = {...oUser, ...user};
+                return {success: true};
             }
+            return {success: false};
         }
     }
 };

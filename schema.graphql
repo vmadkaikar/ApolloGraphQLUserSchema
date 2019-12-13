@@ -21,3 +21,7 @@ input UserInput {
     dob: String
 }
 
+type Mutation {
+    addUser(user: UserInput): ResponsePayload
+    updateUser(user: UserInput): ResponsePayload
+}

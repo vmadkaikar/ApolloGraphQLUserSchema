@@ -1,6 +1,8 @@
 {
   "name": "ApolloGraphQLUserSchema",
   "version": "0.0.1",
+  "type": "module",
+  "main": "./index.js",
   "dependencies": {
     "@graphql-modules/core": "^0.7.13",
     "graphql-import-node": "0.0.4",
